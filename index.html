@@ -258,12 +258,23 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
   .trusted-in{flex-direction:column;gap:10px}
 }
 </style>
+
+<!-- EmailJS — reemplaza YOUR_PUBLIC_KEY, YOUR_SERVICE_ID y YOUR_TEMPLATE_ID con tus credenciales de emailjs.com -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init({ publicKey: "YOUR_PUBLIC_KEY" });
+  })();
+</script>
+  <!-- EmailJS: reemplaza YOUR_PUBLIC_KEY con tu clave de emailjs.com -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>(function(){ emailjs.init({ publicKey:"YOUR_PUBLIC_KEY" }); })();</script>
 </head>
 <body>
 
 <form name="contact" netlify netlify-honeypot="bot-field" hidden>
   <input type="text" name="nombre"><input type="email" name="email">
-  <input type="text" name="pais"><select name="servicio"></select><textarea name="mensaje"></textarea>
+  <input type="text" name="pais"><select name="servicio" required></select><textarea name="mensaje"></textarea>
 </form>
 
 <nav>
@@ -331,7 +342,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
             <text x="192" y="300" font-family="Plus Jakarta Sans,sans-serif" font-size="8.5" fill="#e8e6de">0% rentas extranjeras</text>
             <circle cx="182" cy="316" r="5" fill="#22c55e" fill-opacity="0.2"/>
             <text x="180" y="319" font-family="Plus Jakarta Sans,sans-serif" font-size="6" font-weight="800" fill="#22c55e" text-anchor="middle">✓</text>
-            <text x="192" y="320" font-family="Plus Jakarta Sans,sans-serif" font-size="8.5" fill="#e8e6de">Pasaporte a los 3 anos</text>
+            <text x="192" y="320" font-family="Plus Jakarta Sans,sans-serif" font-size="8.5" fill="#e8e6de">Pasaporte a los 3 a&#241;os</text>
             <circle cx="182" cy="336" r="5" fill="#22c55e" fill-opacity="0.2"/>
             <text x="180" y="339" font-family="Plus Jakarta Sans,sans-serif" font-size="6" font-weight="800" fill="#22c55e" text-anchor="middle">✓</text>
             <text x="192" y="340" font-family="Plus Jakarta Sans,sans-serif" font-size="8.5" fill="#e8e6de">Sin permanencia minima</text>
@@ -340,7 +351,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
             <text x="192" y="360" font-family="Plus Jakarta Sans,sans-serif" font-size="8.5" fill="#e8e6de">Residencia fiscal facil</text>
             <circle cx="182" cy="376" r="5" fill="#22c55e" fill-opacity="0.2"/>
             <text x="180" y="379" font-family="Plus Jakarta Sans,sans-serif" font-size="6" font-weight="800" fill="#22c55e" text-anchor="middle">✓</text>
-            <text x="192" y="380" font-family="Plus Jakarta Sans,sans-serif" font-size="8.5" fill="#e8e6de">Residencia permanente USD 1,499</text>
+            <text x="192" y="380" font-family="Plus Jakarta Sans,sans-serif" font-size="8.5" fill="#e8e6de">Residencia desde USD 1,499</text>
           </g>
 
           <!-- Card 3: Corporate Finance (top right, floating delay) -->
@@ -396,22 +407,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
     <p class="ss reveal">Sin desvios entre especialistas. Coordinamos todo para que tu te centres en tu negocio.</p>
     <div class="pillars reveal">
       <div class="pc">
-        <div class="pn">01 — CFO Externo & Finanzas</div>
-        <h3>Direccion financiera estrategica</h3>
-        <p>Sin necesidad de incorporar un CFO en plantilla. Vision estrategica, reporting y apoyo en inversion.</p>
-        <ul class="pl">
-          <li>CFO externo / Fractional CFO</li>
-          <li>Planificacion financiera y presupuestos</li>
-          <li>Reporting y cuadros de mando</li>
-          <li>Planes de negocio y proyecciones</li>
-          <li>Valoracion de empresas</li>
-          <li>Preparacion para inversores y rondas</li>
-          <li>Contabilidad y cierres (coordinacion)</li>
-        </ul>
-        <a href="#finanzas" class="pcta">Ver detalle completo &rarr;</a>
-      </div>
-      <div class="pc">
-        <div class="pn">02 — Servicios en Paraguay</div>
+        <div class="pn">01 — Servicios en Paraguay</div>
         <h3>Establecerte en Paraguay</h3>
         <p>Residencia permanente, fiscal, sociedad, contador e impuestos. Con despachos locales registrados.</p>
         <ul class="pl">
@@ -425,20 +421,137 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
         </ul>
         <a href="#paraguay" class="pcta">Ver detalle completo &rarr;</a>
       </div>
+      <div class="pc">
+        <div class="pn">02 — CFO Externo &amp; Finanzas</div>
+        <h3>Direccion financiera estrategica</h3>
+        <p>Sin necesidad de incorporar un CFO en plantilla. Vision estrategica, reporting y apoyo en inversion.</p>
+        <ul class="pl">
+          <li>CFO externo / Fractional CFO</li>
+          <li>Planificacion financiera y presupuestos</li>
+          <li>Reporting y cuadros de mando</li>
+          <li>Planes de negocio y proyecciones</li>
+          <li>Valoracion de empresas</li>
+          <li>Preparacion para inversores y rondas</li>
+          <li>Contabilidad y cierres (coordinacion)</li>
+        </ul>
+        <a href="#finanzas" class="pcta">Ver detalle completo &rarr;</a>
+      </div>
     </div>
     <div class="pr reveal">
       <div class="prs"><div class="prn">Paso 01</div><div class="prt">Llamada de diagnostico</div><div class="prd">Sin coste ni compromiso. Entendemos tu situacion.</div></div>
       <div class="prs"><div class="prn">Paso 02</div><div class="prt">Analisis y propuesta</div><div class="prd">Alcance y honorarios claros desde el inicio.</div></div>
       <div class="prs"><div class="prn">Paso 03</div><div class="prt">Implantacion</div><div class="prd">Ejecutamos y coordinamos todo el proceso.</div></div>
-      <div class="prs"><div class="prn">Paso 04</div><div class="prt">Seguimiento</div><div class="prd">Acompanamiento mensual o trimestral.</div></div>
+      <div class="prs"><div class="prn">Paso 04</div><div class="prt">Seguimiento</div><div class="prd">Acompa&#241;amiento mensual o trimestral.</div></div>
     </div>
+  </div>
+</div>
+
+<!-- PARAGUAY - LIGHT -->
+<div id="paraguay" class="sw">
+  <div class="si">
+    <p class="ey reveal">Area 01 — Paraguay</p>
+    <h2 class="st reveal">Servicios integrales<br>para establecerte en Paraguay</h2>
+    <p class="ss reveal">Desde la residencia permanente hasta la operativa fiscal y societaria. Con abogados y contables locales registrados.</p>
+    <!-- Benefits summary -->
+    <div class="py-benefits reveal">
+      <div class="py-benefits-title">¿Por que residir en Paraguay?</div>
+      <div class="py-benefits-grid">
+        <div class="py-benefit"><span class="chk">✓</span><span><strong>0% de impuestos</strong> sobre rentas de fuente extranjera</span></div>
+        <div class="py-benefit"><span class="chk">✓</span><span><strong>Pasaporte paraguayo</strong> elegible a los 3 a&#241;os de residencia</span></div>
+        <div class="py-benefit"><span class="chk">✓</span><span><strong>Permanencia minima muy baja:</strong> 1 dia/a&#241;o con temporal &mdash; hasta 3 a&#241;os fuera con permanente</span></div>
+        <div class="py-benefit"><span class="chk">✓</span><span><strong>Coste de vida muy bajo</strong> con alta calidad de servicios</span></div>
+        <div class="py-benefit"><span class="chk">✓</span><span><strong>Proceso accesible</strong> desde cualquier pais sin necesitar residir previamente</span></div>
+        <div class="py-benefit"><span class="chk">✓</span><span><strong>Sistema fiscal territorial</strong> sencillo y predecible</span></div>
+      </div>
+    </div>
+
+    <div class="pyg reveal">
+      <div class="pyc pyc-wide">
+        <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px">
+          <div class="pyi">⌂</div>
+          <div>
+            <h4 style="border-bottom:none;padding-bottom:0;margin-bottom:3px">Residencia en Paraguay</h4>
+            <p style="font-size:.74rem;color:var(--muted);margin:0;line-height:1.5">Proceso en dos pasos. Acompa&#241;amiento completo con abogados locales.</p>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+          <!-- PASO 1: Temporal -->
+          <div style="background:#f0f8f4;border:1px solid #b7dfcc;border-radius:8px;padding:16px">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:8px">
+              <div class="pbg" style="background:#2d6a4f;margin-bottom:0">Paso 1 — Residencia Temporal</div>
+              <div class="price-badge" style="white-space:nowrap">USD 1,499</div>
+            </div>
+            <div style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">3 documentos apostillados</div>
+            <ul>
+              <li>Pasaporte vigente</li>
+              <li>Certificado de nacimiento apostillado</li>
+              <li>Antecedentes penales apostillados</li>
+            </ul>
+            <div style="margin-top:12px;font-size:.73rem;color:#3a3a32;line-height:1.65;border-top:1px solid #c8dfd0;padding-top:10px">
+              <span style="color:#2d6a4f;font-weight:700">45–90 dias</span> de tramitacion &middot; Carnet temporal <strong>2 a&#241;os</strong><br>
+              Cedula paraguaya en <strong>~15 dias</strong> tras la aprobacion<br>
+              <span style="color:#6b6b62">Requisito: pisar Paraguay <strong>1 vez al a&#241;o</strong></span>
+            </div>
+            <div style="margin-top:10px;font-size:.71rem;color:#6b4c10;background:#fefce8;border:1px solid #fde047;border-left:2px solid #ca8a04;border-radius:6px;padding:7px 10px;line-height:1.6">
+              ⚠ La cedula <strong>no equivale</strong> a residencia fiscal. Para el cambio de residencia fiscal hay un tramite separado.
+            </div>
+          </div>
+          <!-- PASO 2: Permanente -->
+          <div style="background:#f8f7f0;border:1px solid #d6d0c2;border-radius:8px;padding:16px">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><div class="pbg" style="background:#1a1a18;margin-bottom:0">Paso 2 — Residencia Permanente</div><div class="price-badge" style="font-size:.7rem">USD 499</div></div>
+            <div style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">A partir del mes 21 (sin esperar 2 a&#241;os)</div>
+            <ul>
+              <li>Carnet de residencia temporal vigente</li>
+              <li>Pasaporte vigente</li>
+              <li>Antecedentes penales (Policia paraguaya)</li>
+              <li>Extracto bancario o prueba de solvencia</li>
+            </ul>
+            <div style="margin-top:12px;font-size:.73rem;color:#3a3a32;line-height:1.65;border-top:1px solid #d6d0c2;padding-top:10px">
+              Carnet valido <strong>10 a&#241;os</strong><br>
+              Hasta <span style="color:#2d6a4f;font-weight:700">3 a&#241;os fuera</span> del pais sin perderla<br>
+              Punto de partida para la <strong>ciudadania paraguaya</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pyc">
+        <div class="ph"><div class="pyi">◎</div><div class="price-badge">USD 149</div></div>
+        <h4>Certificado de Residencia Fiscal</h4>
+        <ul><li>Alta en RUC</li><li>Certificado de residencia fiscal</li><li>Coordinacion con gestores locales</li><li>Soporte ante la SET</li><li>Orientacion sobre plazos</li></ul>
+      </div>
+      <div class="pyc">
+        <div class="ph"><div class="pyi">⊞</div><div class="price-badge">USD 1,749</div></div>
+        <h4>Constitucion de Sociedades</h4>
+        <ul><li>Eleccion del tipo societario (SAS, SRL, SA)</li><li>Coordinacion con notaria y registro</li><li>Alta en SET y RUC</li><li>Apertura operativa</li><li>Acompa&#241;amiento post-constitucion</li></ul>
+      </div>
+      <div class="pyc">
+        <div class="ph"><div class="pyi">◈</div><div class="price-badge">USD 149<span style="font-size:.62rem;font-weight:500">/mes</span></div></div>
+        <h4>Contabilidad Completa para Sociedades</h4>
+        <ul><li>IVA mensual (Formulario 120)</li><li>Retenciones y formularios ante la SET</li><li>Liquidacion y presentacion anual del IRE</li><li>Estados financieros y cierre de ejercicio</li><li>Acompa&#241;amiento contable continuo</li></ul>
+      </div>
+      <div class="pyc">
+        <div class="ph"><div class="pyi">◻</div><div class="price-badge">USD 49<span style="font-size:.62rem;font-weight:500">/mes</span></div></div>
+        <h4>Gestion Tributaria Mensual</h4>
+        <ul><li>Declaracion Jurada del IVA mensual</li><li>Presentacion anual del IRP ante la SET</li><li>Seguimiento del calendario fiscal</li><li>Todo gestionado por nosotros</li></ul>
+      </div>
+      <div class="pyc">
+        <div class="ph"><div class="pyi">◇</div><div class="price-badge" style="background:var(--bg2);color:var(--tagt);border:1px solid var(--border)">Consultar</div></div>
+        <h4>Apertura de Cuentas Bancarias</h4>
+        <ul><li>Preparacion de documentacion completa</li><li>Coordinacion con bancos y fintech locales</li><li>Orientacion sobre requisitos por entidad</li><li>Apoyo durante el proceso</li></ul>
+      </div>
+    </div>
+    <div class="pyp reveal">
+      <div class="ppk"><div class="pbg">Pack recomendado</div><h5>Residencia Completa — USD 2,147</h5><p>Residencia temporal (USD 1,499) + conversi&#243;n a permanente (USD 499) + certificado de residencia fiscal (USD 149). Un &#250;nico punto de contacto para todo el proceso.</p></div>
+      <div class="ppk"><div class="pbg">Pack empresa</div><h5>Sociedad & Operativa — USD 1,898</h5><p>Constitucion de sociedad + contabilidad mensual (USD 149/mes). Lista para operar desde el primer dia.</p></div>
+    </div>
+    
   </div>
 </div>
 
 <!-- FINANZAS - DARK -->
 <div id="finanzas" class="sw dark">
   <div class="si">
-    <p class="ey reveal">Area 01 — CFO Externo & Finanzas</p>
+    <p class="ey reveal">Area 02 — CFO Externo &amp; Finanzas</p>
     <h2 class="st reveal">Vision estrategica de CFO<br>sin incorporarlo en plantilla</h2>
     <p class="ss reveal">Consultoria estrategica. No realizamos ejecucion fiscal local ni presentamos declaraciones en ningun pais.</p>
     <div class="fg reveal">
@@ -454,72 +567,6 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
       <div class="inv-c"><div class="inv-n">03 — Valor</div><h5>Valoracion de Empresas</h5><p>Multiples de mercado, DCF y valoracion por activos. Supuestos comunicados con claridad.</p></div>
       <div class="inv-c"><div class="inv-n">04 — Rondas</div><h5>Rondas de Inversion</h5><p>Apoyo en proceso de due diligence y negociacion desde el lado del fundador.</p></div>
     </div>
-  </div>
-</div>
-
-<!-- PARAGUAY - LIGHT -->
-<div id="paraguay" class="sw">
-  <div class="si">
-    <p class="ey reveal">Area 02 — Paraguay</p>
-    <h2 class="st reveal">Servicios integrales<br>para establecerte en Paraguay</h2>
-    <p class="ss reveal">Desde la residencia permanente hasta la operativa fiscal y societaria. Con abogados y contables locales registrados.</p>
-    <!-- Benefits summary -->
-    <div class="py-benefits reveal">
-      <div class="py-benefits-title">¿Por que residir en Paraguay?</div>
-      <div class="py-benefits-grid">
-        <div class="py-benefit"><span class="chk">✓</span><span><strong>0% de impuestos</strong> sobre rentas de fuente extranjera</span></div>
-        <div class="py-benefit"><span class="chk">✓</span><span><strong>Pasaporte paraguayo</strong> elegible a los 3 anos de residencia</span></div>
-        <div class="py-benefit"><span class="chk">✓</span><span><strong>Sin minimo de permanencia</strong> anual obligatoria</span></div>
-        <div class="py-benefit"><span class="chk">✓</span><span><strong>Coste de vida muy bajo</strong> con alta calidad de servicios</span></div>
-        <div class="py-benefit"><span class="chk">✓</span><span><strong>Proceso accesible</strong> desde cualquier pais sin necesitar residir previamente</span></div>
-        <div class="py-benefit"><span class="chk">✓</span><span><strong>Sistema fiscal territorial</strong> sencillo y predecible</span></div>
-      </div>
-    </div>
-
-    <div class="pyg reveal">
-      <div class="pyc">
-        <div class="ph"><div class="pyi">⌂</div><div class="price-badge">USD 1,499</div></div>
-        <h4>Residencia Permanente</h4>
-        <p style="font-size:.75rem;color:var(--muted);line-height:1.65;margin-bottom:10px">Acompanamiento completo coordinado con abogados locales.</p>
-        <div style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">Documentacion</div>
-        <ul>
-          <li>Certificado de nacimiento apostillado</li>
-          <li>Certificado de matrimonio / divorcio / defuncion (segun estado civil) apostillado</li>
-          <li>Antecedentes penales apostillados</li>
-          <li>Foto carne fondo blanco + pasaporte vigente</li>
-        </ul>
-      </div>
-      <div class="pyc">
-        <div class="ph"><div class="pyi">◎</div><div class="price-badge">USD 149</div></div>
-        <h4>Certificado de Residencia Fiscal</h4>
-        <ul><li>Alta en RUC</li><li>Certificado de residencia fiscal</li><li>Coordinacion con gestores locales</li><li>Soporte ante la SET</li><li>Orientacion sobre plazos</li></ul>
-      </div>
-      <div class="pyc">
-        <div class="ph"><div class="pyi">⊞</div><div class="price-badge">USD 1,749</div></div>
-        <h4>Constitucion de Sociedades</h4>
-        <ul><li>Eleccion del tipo societario (SAS, SRL, SA)</li><li>Coordinacion con notaria y registro</li><li>Alta en SET y RUC</li><li>Apertura operativa</li><li>Acompanamiento post-constitucion</li></ul>
-      </div>
-      <div class="pyc">
-        <div class="ph"><div class="pyi">◈</div><div class="price-badge">USD 149<span style="font-size:.62rem;font-weight:500">/mes</span></div></div>
-        <h4>Contabilidad Completa para Sociedades</h4>
-        <ul><li>IVA mensual (Formulario 120)</li><li>Retenciones y formularios ante la SET</li><li>Liquidacion y presentacion anual del IRE</li><li>Estados financieros y cierre de ejercicio</li><li>Acompanamiento contable continuo</li></ul>
-      </div>
-      <div class="pyc">
-        <div class="ph"><div class="pyi">◻</div><div class="price-badge">USD 49<span style="font-size:.62rem;font-weight:500">/mes</span></div></div>
-        <h4>Gestion Tributaria Mensual</h4>
-        <ul><li>Declaracion Jurada del IVA mensual</li><li>Presentacion anual del IRP ante la SET</li><li>Seguimiento del calendario fiscal</li><li>Todo gestionado por nosotros</li></ul>
-      </div>
-      <div class="pyc">
-        <div class="ph"><div class="pyi">◇</div><div class="price-badge" style="background:var(--bg2);color:var(--tagt);border:1px solid var(--border)">Consultar</div></div>
-        <h4>Apertura de Cuentas Bancarias</h4>
-        <ul><li>Preparacion de documentacion completa</li><li>Coordinacion con bancos y fintech locales</li><li>Orientacion sobre requisitos por entidad</li><li>Apoyo durante el proceso</li></ul>
-      </div>
-    </div>
-    <div class="pyp reveal">
-      <div class="ppk"><div class="pbg">Pack recomendado</div><h5>Residencia Completa — USD 1,648</h5><p>Residencia permanente + certificado de residencia fiscal. Un unico punto de contacto para todo el proceso.</p></div>
-      <div class="ppk"><div class="pbg">Pack empresa</div><h5>Sociedad & Operativa — USD 1,898</h5><p>Constitucion de sociedad + contabilidad mensual (USD 149/mes). Lista para operar desde el primer dia.</p></div>
-    </div>
-    
   </div>
 </div>
 
@@ -575,7 +622,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
         <div class="exp-content">
           <div class="exp-tag">Planificacion Fiscal</div>
           <h4>Estructuracion fiscal en Paraguay</h4>
-          <p>Diseno de estructuras de planificacion fiscal para perfiles internacionales en Paraguay, incluyendo residencia fiscal, RUC y optimizacion dentro del marco legal.</p>
+          <p>Dise&#241;o de estructuras de planificacion fiscal para perfiles internacionales en Paraguay, incluyendo residencia fiscal, RUC y optimizacion dentro del marco legal.</p>
         </div>
       </div>
       <div class="exp-card">
@@ -597,11 +644,11 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
     <h2 class="st reveal">Preguntas frecuentes</h2>
     <div class="fw reveal">
       <div class="fi"><button class="fq" onclick="tF(this)">Cuanto tarda el proceso de residencia en Paraguay?<span class="ftg">+</span></button><div class="fa">Aproximadamente 4 meses desde que se presenta la documentacion de firma presencial en Paraguay hasta obtener la cedula de identidad paraguaya.</div></div>
-      <div class="fi"><button class="fq" onclick="tF(this)">Cuanto tiempo tengo que vivir en Paraguay una vez residente?<span class="ftg">+</span></button><div class="fa">Solo 1 dia cada 3 anos, siempre que tengas el RUC activo. El RUC (Registro Unico de Contribuyentes) es el numero de identificacion fiscal en Paraguay, equivalente al NIF en Espana. Tenerlo activo acredita actividad economica y permite mantener la residencia sin obligacion de permanencia real.</div></div>
-      <div class="fi"><button class="fq" onclick="tF(this)">Que impuestos se pagan en Paraguay como residente fiscal?<span class="ftg">+</span></button><div class="fa">Si tus ingresos son de fuente extranjera, tributas al 0%. Si tienes ingresos de fuente paraguaya, se aplica el IRP (Impuesto a la Renta Personal), que va del 8% al 10% segun el nivel de ingresos — equivalente al IRPF en Espana, aunque con tipos muy inferiores. Gestionamos todo.</div></div>
-      <div class="fi"><button class="fq" onclick="tF(this)">Es Paraguay una buena opcion para espanoles?<span class="ftg">+</span></button><div class="fa">Si. Espana y Paraguay tienen firmado un Convenio de Doble Imposicion (CDI), lo que evita tributar dos veces por los mismos ingresos. Combinado con el 0% sobre rentas de fuente extranjera, es una de las opciones mas eficientes para espanoles con ingresos internacionales.</div></div>
+      <div class="fi"><button class="fq" onclick="tF(this)">Cuanto tiempo tengo que vivir en Paraguay una vez residente?<span class="ftg">+</span></button><div class="fa">Solo 1 dia cada 3 a&#241;os, siempre que tengas el RUC activo. El RUC (Registro Unico de Contribuyentes) es el numero de identificacion fiscal en Paraguay, equivalente al NIF en Espa&#241;a. Tenerlo activo acredita actividad economica y permite mantener la residencia sin obligacion de permanencia real.</div></div>
+      <div class="fi"><button class="fq" onclick="tF(this)">Que impuestos se pagan en Paraguay como residente fiscal?<span class="ftg">+</span></button><div class="fa">Si tus ingresos son de fuente extranjera, tributas al 0%. Si tienes ingresos de fuente paraguaya, se aplica el IRP (Impuesto a la Renta Personal), que va del 8% al 10% segun el nivel de ingresos — equivalente al IRPF en Espa&#241;a, aunque con tipos muy inferiores. Gestionamos todo.</div></div>
+      <div class="fi"><button class="fq" onclick="tF(this)">Es Paraguay una buena opcion para espanoles?<span class="ftg">+</span></button><div class="fa">Si. Espa&#241;a y Paraguay tienen firmado un Convenio de Doble Imposicion (CDI), lo que evita tributar dos veces por los mismos ingresos. Combinado con el 0% sobre rentas de fuente extranjera, es una de las opciones mas eficientes para espanoles con ingresos internacionales.</div></div>
       <div class="fi"><button class="fq" onclick="tF(this)">Podeis ayudar a constituir una LLC americana?<span class="ftg">+</span></button><div class="fa">Segun el caso, si. Una LLC (Limited Liability Company) es una sociedad americana muy utilizada para facturar internacionalmente. Si eres residente fiscal en Paraguay y la LLC genera ingresos fuera de Paraguay, las distribuciones (equivalente a dividendos) tributan al 0% al tratarse de renta de fuente extranjera, siempre que el servicio no se preste desde territorio paraguayo. Analizamos cada caso antes de recomendar esta estructura.</div></div>
-      <div class="fi"><button class="fq" onclick="tF(this)">Desde que paises atendeis clientes?<span class="ftg">+</span></button><div class="fa">Desde cualquier pais del mundo. Trabajamos 100% en remoto con clientes en Espana, Mexico, Argentina, Colombia, Estados Unidos y muchos otros paises.</div></div>
+      <div class="fi"><button class="fq" onclick="tF(this)">Desde que paises atendeis clientes?<span class="ftg">+</span></button><div class="fa">Desde cualquier pais del mundo. Trabajamos 100% en remoto con clientes en Espa&#241;a, Mexico, Argentina, Colombia, Estados Unidos y muchos otros paises.</div></div>
       <div class="fi"><button class="fq" onclick="tF(this)">Que diferencia hay entre residencia y residencia fiscal?<span class="ftg">+</span></button><div class="fa">La residencia te da la cedula paraguaya y el derecho a vivir en el pais. La residencia fiscal implica ademas darte de alta como contribuyente (RUC) y obtener el certificado que acredita Paraguay como tu domicilio fiscal — esto es lo que permite cambiar tu residencia fiscal y aplicar el 0% sobre rentas extranjeras.</div></div>
     </div>
   </div>
@@ -613,35 +660,35 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
     <p class="ey reveal">Contacto</p>
     <div class="cg">
       <div class="ci reveal">
-        <h3>Cuentanos tu situacion</h3>
+        <h3>Cu&#233;ntanos tu situacion</h3>
         <p>Analizamos tu caso y te decimos si podemos ayudarte y como. Sin compromiso.</p>
         
         
       </div>
       <div class="reveal">
-        <form class="cf" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="contact">
-          <p style="display:none"><input name="bot-field"></p>
+        <form class="cf" id="contactForm" onsubmit="sendEmail(event)">
           <div class="fr2">
-            <div class="ff"><label>Nombre</label><input type="text" name="nombre" placeholder="Tu nombre" required></div>
-            <div class="ff"><label>Email</label><input type="email" name="email" placeholder="tu@email.com" required></div>
+            <div class="ff"><label>Nombre</label><input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required></div>
+            <div class="ff"><label>Email</label><input type="email" id="email" name="email" placeholder="tu@email.com" required></div>
           </div>
-          <div class="ff"><label>Pais de residencia</label><input type="text" name="pais" placeholder="Espana, Mexico, Argentina..."></div>
-          <div class="ff"><label>Servicio de interes</label>
-            <select name="servicio">
-              <option value="">Selecciona un area</option>
-              <option>CFO Externo & Finanzas</option>
-              <option>Inversion & Corporate Finance</option>
+          <div class="ff"><label>Pa&#237;s de residencia</label><input type="text" id="pais" name="pais" placeholder="Espa&#241;a, M&#233;xico, Argentina..." required></div>
+          <div class="ff"><label>Servicio de inter&#233;s</label>
+            <select id="servicio" name="servicio" required>
+              <option value="">Selecciona un &#225;rea</option>
+              <option>CFO Externo &amp; Finanzas</option>
+              <option>Inversi&#243;n &amp; Corporate Finance</option>
+              <option>Residencia temporal en Paraguay</option>
               <option>Residencia permanente en Paraguay</option>
               <option>Residencia fiscal en Paraguay</option>
-              <option>Constitucion de sociedad en Paraguay</option>
+              <option>Constituci&#243;n de sociedad en Paraguay</option>
               <option>Contador / Impuestos en Paraguay</option>
-              <option>Varios / No se por donde empezar</option>
+              <option>Varios / No s&#233; por d&#243;nde empezar</option>
             </select>
           </div>
-          <div class="ff"><label>Cuentanos brevemente</label><textarea name="mensaje" placeholder="Describe tu situacion y que estas buscando..."></textarea></div>
-          <button type="submit" class="btn-form">Enviar mensaje</button>
-          <p class="fn">Al enviar aceptas nuestra <a href="#" onclick="oM('privacy');return false">Politica de Privacidad</a>.</p>
+          <div class="ff"><label>Cu&#233;ntanos brevemente</label><textarea id="mensaje" name="mensaje" placeholder="Describe tu situaci&#243;n y qu&#233; est&#225;s buscando..." required></textarea></div>
+          <button type="submit" class="btn-form" id="submitBtn">Enviar mensaje</button>
+          <div id="formMsg" style="display:none;margin-top:12px;padding:12px 16px;border-radius:8px;font-size:.8rem;font-weight:600;line-height:1.5"></div>
+          <p class="fn">Al enviar aceptas nuestra <a href="#" onclick="oM('privacy');return false">Pol&#237;tica de Privacidad</a>.</p>
         </form>
       </div>
     </div>
@@ -669,13 +716,46 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding
 <!-- MODALES -->
 <div class="mo" id="modal-legal"><div class="mb"><button class="mc" onclick="cM('legal')">&#10005;</button><div class="mt">Aviso Legal</div><div class="ms">Novaterra &middot; 2025</div><div class="mb2"><h3>1. Titular</h3><p>El presente sitio web (novaterraholdings.com) es propiedad de Novaterra. Correo: info@novaterraholdings.com</p><h3>2. Objeto</h3><p>Sitio web de caracter informativo y comercial para presentar los servicios de Novaterra.</p><h3>3. Propiedad intelectual</h3><p>Todos los contenidos son propiedad de Novaterra. Queda prohibida su reproduccion sin autorizacion expresa.</p><h3>4. Responsabilidad</h3><p>Novaterra no garantiza la exactitud o actualidad de la informacion publicada. El uso del sitio es bajo responsabilidad del usuario.</p><h3>5. Ley aplicable</h3><p>Este aviso se rige por la legislacion de los Estados Unidos de America.</p></div></div></div>
 
-<div class="mo" id="modal-privacy"><div class="mb"><button class="mc" onclick="cM('privacy')">&#10005;</button><div class="mt">Politica de Privacidad</div><div class="ms">Novaterra &middot; 2025</div><div class="mb2"><h3>1. Responsable</h3><p>Novaterra, con correo info@novaterraholdings.com, es responsable del tratamiento de los datos personales recogidos a traves de este sitio.</p><h3>2. Datos que recopilamos</h3><p>Unicamente los que el usuario facilita voluntariamente: nombre, email, pais e informacion del mensaje. Este sitio no utiliza cookies de seguimiento ni publicidad.</p><h3>3. Finalidad</h3><p>Responder consultas y enviar informacion sobre servicios si el usuario da su consentimiento.</p><h3>4. Conservacion</h3><p>Los datos se conservaran un maximo de 2 anos desde el ultimo contacto, salvo relacion contractual en curso.</p><h3>5. Derechos</h3><p>El usuario puede ejercer sus derechos de acceso, rectificacion, supresion y oposicion enviando un correo a info@novaterraholdings.com.</p><h3>6. Usuarios en California</h3><p>Los residentes en California tienen derechos bajo la CCPA. Para ejercerlos, contactar a info@novaterraholdings.com.</p></div></div></div>
+<div class="mo" id="modal-privacy"><div class="mb"><button class="mc" onclick="cM('privacy')">&#10005;</button><div class="mt">Politica de Privacidad</div><div class="ms">Novaterra &middot; 2025</div><div class="mb2"><h3>1. Responsable</h3><p>Novaterra, con correo info@novaterraholdings.com, es responsable del tratamiento de los datos personales recogidos a traves de este sitio.</p><h3>2. Datos que recopilamos</h3><p>Unicamente los que el usuario facilita voluntariamente: nombre, email, pais e informacion del mensaje. Este sitio no utiliza cookies de seguimiento ni publicidad.</p><h3>3. Finalidad</h3><p>Responder consultas y enviar informacion sobre servicios si el usuario da su consentimiento.</p><h3>4. Conservacion</h3><p>Los datos se conservaran un maximo de 2 a&#241;os desde el ultimo contacto, salvo relacion contractual en curso.</p><h3>5. Derechos</h3><p>El usuario puede ejercer sus derechos de acceso, rectificacion, supresion y oposicion enviando un correo a info@novaterraholdings.com.</p><h3>6. Usuarios en California</h3><p>Los residentes en California tienen derechos bajo la CCPA. Para ejercerlos, contactar a info@novaterraholdings.com.</p></div></div></div>
 
 <div class="mo" id="modal-terms"><div class="mb"><button class="mc" onclick="cM('terms')">&#10005;</button><div class="mt">Terminos de Uso</div><div class="ms">Novaterra &middot; 2025</div><div class="mb2"><h3>1. Aceptacion</h3><p>El acceso y uso de este sitio implica la aceptacion de los presentes terminos.</p><h3>2. Servicios</h3><p>Novaterra presta servicios de consultoria financiera estrategica y de coordinacion en Paraguay. Todos los servicios son consultivos; no constituyen asesoramiento fiscal local ni gestion discrecional de carteras.</p><h3>3. Responsabilidad</h3><p>Novaterra no sera responsable de perdidas derivadas del uso de este sitio o inexactitudes en la informacion publicada.</p><h3>4. Ley aplicable</h3><p>Estos terminos se rigen por las leyes de los Estados Unidos de America.</p></div></div></div>
 
 <div class="mo" id="modal-disc"><div class="mb"><button class="mc" onclick="cM('disc')">&#10005;</button><div class="mt">Disclaimer Financiero</div><div class="ms">Novaterra &middot; Aviso importante &middot; 2025</div><div class="mb2"><div class="hl">Lea detenidamente este aviso antes de utilizar cualquier informacion de este sitio web.</div><h3>1. Solo informacion general</h3><p>Los contenidos se ofrecen con fines informativos. No constituyen asesoramiento financiero, de inversion, fiscal, contable ni legal.</p><h3>2. Sin asesoramiento de inversion</h3><p>Nada en este sitio debe interpretarse como recomendacion de compra, venta o mantenimiento de ningun valor o producto financiero.</p><h3>3. No registrada ante la SEC</h3><p>Novaterra no esta registrada como investment adviser ante la SEC ni ante ninguna autoridad reguladora de servicios de inversion. No ofrece servicios de gestion discrecional de carteras ni comercializacion de productos financieros regulados.</p><h3>4. Servicios en Paraguay</h3><p>Los servicios en Paraguay se prestan en coordinacion con despachos locales independientes. Novaterra actua como asesor y coordinador, sin responsabilidad por los servicios que dichos despachos presten directamente.</p><h3>5. Sin garantias de resultados</h3><p>Novaterra no garantiza ningun resultado economico, ahorro fiscal concreto ni resolucion favorable de ningun tramite.</p><h3>6. Limitacion de responsabilidad</h3><p>Novaterra no sera responsable de ninguna perdida directa o indirecta derivada del uso de este sitio. El uso de la informacion es bajo exclusiva responsabilidad del usuario.</p></div></div></div>
 
 <script>
+async function sendEmail(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  const msg = document.getElementById('formMsg');
+  btn.disabled = true;
+  btn.textContent = 'Enviando...';
+  const params = {
+    to_email: 'info@novaterraholdings.com',
+    from_name:  document.getElementById('nombre').value,
+    from_email: document.getElementById('email').value,
+    pais:       document.getElementById('pais').value,
+    servicio:   document.getElementById('servicio').value,
+    mensaje:    document.getElementById('mensaje').value,
+  };
+  try {
+    // Reemplaza 'YOUR_SERVICE_ID' y 'YOUR_TEMPLATE_ID' con tus valores de emailjs.com
+    await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', params);
+    msg.style.display = 'block';
+    msg.style.background = '#f0f8f4';
+    msg.style.border = '1px solid #b7dfcc';
+    msg.style.color = '#1a4a30';
+    msg.textContent = '&#10003; Mensaje enviado correctamente. Te responderemos en menos de 24h.';
+    document.getElementById('contactForm').reset();
+  } catch(err) {
+    msg.style.display = 'block';
+    msg.style.background = '#fef2f2';
+    msg.style.border = '1px solid #fca5a5';
+    msg.style.color = '#7f1d1d';
+    msg.textContent = 'Error al enviar. Escr&#237;benos directamente a info@novaterraholdings.com';
+  }
+  btn.disabled = false;
+  btn.textContent = 'Enviar mensaje';
+}
 function tF(b){const a=b.nextElementSibling,o=a.classList.contains('open');document.querySelectorAll('.fa.open').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.fq.open').forEach(x=>x.classList.remove('open'));if(!o){a.classList.add('open');b.classList.add('open')}}
 function oM(id){document.getElementById('modal-'+id).classList.add('open');document.body.style.overflow='hidden'}
 function cM(id){document.getElementById('modal-'+id).classList.remove('open');document.body.style.overflow=''}
