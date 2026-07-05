@@ -18,11 +18,20 @@
 <meta property="og:description" content="0% de impuestos sobre ingresos del extranjero. Residencia + residencia fiscal en Paraguay, todo incluido por USD 2.700.">
 <meta property="og:locale" content="es_ES">
 <meta property="og:site_name" content="Novaterra">
+<meta property="og:image" content="https://novaterraholdings.com/nova%20navy%201.png">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Novaterra | Residencia y Residencia Fiscal en Paraguay">
 <meta name="twitter:description" content="0% de impuestos sobre ingresos del extranjero. Todo incluido por USD 2.700.">
+<meta name="twitter:image" content="https://novaterraholdings.com/nova%20navy%201.png">
+
+<!-- Robots / theme / geo -->
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0B1F3A">
+<meta name="geo.region" content="PY">
+<meta name="geo.placename" content="Asunción, Paraguay">
+<link rel="icon" type="image/png" href="nova%20navy%202.png">
 
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
@@ -33,11 +42,29 @@
   "@type": "ProfessionalService",
   "name": "Novaterra",
   "url": "https://novaterraholdings.com",
-  "email": "info@novaterraholdings.com",
+  "image": "https://novaterraholdings.com/nova%20navy%201.png",
   "description": "Residencia y residencia fiscal en Paraguay todo incluido: cédula de identidad, RUC, facturación electrónica y certificado de residencia fiscal apostillado. También CFO externo y corporate finance.",
-  "areaServed": ["ES", "MX", "AR", "CO", "PY"],
+  "areaServed": ["ES", "MX", "AR", "CO", "US", "PY"],
   "availableLanguage": "Spanish",
-  "serviceType": ["Residencia en Paraguay", "Residencia Fiscal Paraguay", "Constitución de Sociedades", "CFO Externo"]
+  "serviceType": ["Residencia en Paraguay", "Residencia Fiscal Paraguay", "Constitución de Sociedades", "CFO Externo"],
+  "makesOffer": [
+    {"@type": "Offer", "name": "Residencia + Residencia fiscal en Paraguay (todo incluido)", "price": "2700", "priceCurrency": "USD"},
+    {"@type": "Offer", "name": "Mantenimiento contable y fiscal anual", "price": "700", "priceCurrency": "USD"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "¿Cuánto tarda el proceso de residencia en Paraguay?", "acceptedAnswer": {"@type": "Answer", "text": "La residencia temporal se aprueba en unos 90 días desde la presentación de la documentación completa, y la cédula de identidad llega aproximadamente 90 días después."}},
+    {"@type": "Question", "name": "¿Cuánto tiempo hay que estar en Paraguay?", "acceptedAnswer": {"@type": "Answer", "text": "Con la residencia temporal basta 1 día al año de presencia física, manteniendo el RUC activo y al corriente."}},
+    {"@type": "Question", "name": "¿Qué impuestos se pagan como residente fiscal en Paraguay?", "acceptedAnswer": {"@type": "Answer", "text": "Las rentas de fuente extranjera tributan al 0%. Solo las rentas generadas dentro de Paraguay pagan el IRP, entre el 8% y el 10%."}},
+    {"@type": "Question", "name": "¿Es Paraguay una buena opción para españoles?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. España y Paraguay tienen Convenio de Doble Imposición (CDI). El certificado de residencia fiscal apostillado es el soporte para presentar el Modelo 030 ante la Agencia Tributaria."}},
+    {"@type": "Question", "name": "¿Qué documentos se necesitan?", "acceptedAnswer": {"@type": "Answer", "text": "Tres documentos apostillados con la Apostilla de La Haya: certificado de nacimiento, antecedentes penales y, solo si estás casado, certificado de matrimonio."}},
+    {"@type": "Question", "name": "¿Qué diferencia hay entre residencia y residencia fiscal?", "acceptedAnswer": {"@type": "Answer", "text": "La residencia da la cédula y el derecho a vivir en el país. La residencia fiscal añade el alta como contribuyente (RUC) y el certificado que acredita Paraguay como domicilio fiscal, lo que permite aplicar el 0% sobre rentas extranjeras."}}
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -80,6 +107,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .nav-links a.cfo-link::after{content:'→';font-size:.75rem}
 .nav-cta{background:var(--navy);color:#fff;border:none;padding:9px 22px;font-family:var(--font-s);font-size:.78rem;font-weight:700;text-decoration:none;transition:all .2s;letter-spacing:.02em}
 .nav-cta:hover{background:var(--navy3)}
+.nav-right{display:flex;align-items:center;gap:14px}
+.burger{display:none;background:none;border:none;cursor:pointer;padding:6px 2px}
+.burger span{display:block;width:20px;height:2px;background:var(--navy);margin:4px 0;border-radius:2px;transition:.25s}
+.burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 
 /* HERO */
 #home{min-height:92vh;display:flex;flex-direction:column;justify-content:center;padding:110px 48px 56px;position:relative;background:var(--bg)}
@@ -178,7 +211,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .exp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .exp-card{background:var(--white);border:1px solid var(--border2);border-radius:12px;padding:28px;display:flex;gap:18px;align-items:flex-start;transition:box-shadow .2s}
 .exp-card:hover{box-shadow:0 3px 16px rgba(11,31,58,.07)}
-.exp-icon{width:38px;height:38px;border-radius:9px;background:var(--gold-bg);border:1px solid var(--gold-l);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;color:var(--gold-d)}
+.exp-icon{width:44px;height:44px;border-radius:10px;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.exp-icon svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
 .exp-tag{font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-d);margin-bottom:6px}
 .exp-content h4{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:7px;letter-spacing:-.01em}
 .exp-content p{font-size:.8rem;color:var(--muted);line-height:1.75}
@@ -276,6 +310,18 @@ footer{background:var(--navy2);border-top:1px solid rgba(255,255,255,.06);paddin
 /* MOBILE */
 @media(max-width:768px){
   nav{padding:0 20px}
+  .burger{display:block}
+  .nav-links{display:none;position:fixed;top:62px;left:0;right:0;background:rgba(247,245,240,.98);backdrop-filter:blur(14px);border-bottom:1px solid var(--border2);flex-direction:column;align-items:flex-start;padding:20px;gap:16px;z-index:199;box-shadow:0 16px 40px rgba(11,31,58,.12)}
+  .nav-links.open{display:flex}
+  .nav-links a{font-size:.92rem}
+  .hero-title{font-size:2.35rem}
+  .hero-ctas{flex-direction:column}
+  .hero-btn{width:100%;text-align:center}
+  .hp-big{font-size:3.4rem}
+  .hero-panel{padding:28px 26px}
+  .ph-price{font-size:2.7rem}
+  .st{font-size:1.75rem}
+  .prs{border-right:none}
   .nav-links{display:none}
   .sw{padding:56px 20px}
   #home{padding:96px 20px 48px;min-height:auto}
@@ -312,7 +358,10 @@ footer{background:var(--navy2);border-top:1px solid rgba(255,255,255,.06);paddin
     <li><a href="#faq" data-home>FAQ</a></li>
     <li><a href="#/cfo" class="cfo-link">CFO &amp; Finanzas</a></li>
   </ul>
-  <a href="#contacto" class="nav-cta" data-home>Contacto</a>
+  <div class="nav-right">
+    <a href="#contacto" class="nav-cta" data-home>Contacto</a>
+    <button class="burger" onclick="tNav(this)" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
 </nav>
 
 <!-- ============ VISTA PARAGUAY (por defecto) ============ -->
@@ -326,7 +375,7 @@ footer{background:var(--navy2);border-top:1px solid rgba(255,255,255,.06);paddin
       <h1 class="hero-title">Paga <span class="gold">0%</span> de impuestos por tus ingresos del extranjero.</h1>
       <p class="hero-sub">Paraguay no grava las rentas de fuente extranjera. Te conseguimos la <b>residencia, la cédula y el certificado de residencia fiscal</b> — todo gestionado en español, sin mudarte: basta <b>1 día al año</b> en el país.</p>
       <div class="hero-ctas">
-        <a href="#contacto" class="hero-btn">Agenda una llamada gratuita</a>
+        <a href="#contacto" class="hero-btn">Cuéntanos tu caso</a>
         <a href="#precios" class="hero-btn ghost">Ver precio todo incluido</a>
       </div>
       <div class="hero-proof"><span class="dotg"></span>Clientes en España, México, Argentina y Colombia · Despachos locales registrados en Asunción</div>
@@ -456,7 +505,7 @@ footer{background:var(--navy2);border-top:1px solid rgba(255,255,255,.06);paddin
     <p class="ss reveal">Venimos del mundo financiero. Estructuramos tu residencia fiscal con el rigor de quien ha trabajado con inversores y Hacienda.</p>
     <div class="exp-grid reveal">
       <div class="exp-card">
-        <div class="exp-icon">◈</div>
+        <div class="exp-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18"></path><path d="M5 21V8l7-5 7 5v13"></path><path d="M9 21v-4a3 3 0 0 1 6 0v4"></path><path d="M9 11h.01M15 11h.01"></path></svg></div>
         <div class="exp-content">
           <div class="exp-tag">Paraguay</div>
           <h4>Empresas operando en Paraguay</h4>
@@ -464,7 +513,7 @@ footer{background:var(--navy2);border-top:1px solid rgba(255,255,255,.06);paddin
         </div>
       </div>
       <div class="exp-card">
-        <div class="exp-icon">◇</div>
+        <div class="exp-icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3z"></path><path d="M8.5 12l2.5 2.5 4.5-4.5"></path></svg></div>
         <div class="exp-content">
           <div class="exp-tag">Planificación fiscal</div>
           <h4>Estructuras que resisten escrutinio</h4>
@@ -472,7 +521,7 @@ footer{background:var(--navy2);border-top:1px solid rgba(255,255,255,.06);paddin
         </div>
       </div>
       <div class="exp-card">
-        <div class="exp-icon">◉</div>
+        <div class="exp-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3c2.5 2.4 4 5.6 4 9s-1.5 6.6-4 9c-2.5-2.4-4-5.6-4-9s1.5-6.6 4-9z"></path></svg></div>
         <div class="exp-content">
           <div class="exp-tag">Banca internacional</div>
           <h4>Cuentas locales e internacionales</h4>
@@ -480,7 +529,7 @@ footer{background:var(--navy2);border-top:1px solid rgba(255,255,255,.06);paddin
         </div>
       </div>
       <div class="exp-card">
-        <div class="exp-icon">◆</div>
+        <div class="exp-icon"><svg viewBox="0 0 24 24"><path d="M4 20V10"></path><path d="M10 20V4"></path><path d="M16 20v-9"></path><path d="M22 20V7"></path><path d="M2 20h20"></path></svg></div>
         <div class="exp-content">
           <div class="exp-tag">Finanzas corporativas</div>
           <h4>Trayectoria en private equity</h4>
@@ -517,7 +566,7 @@ footer{background:var(--navy2);border-top:1px solid rgba(255,255,255,.06);paddin
         <h3>Cuéntanos tu situación</h3>
         <p>Analizamos tu caso y te decimos si Paraguay encaja contigo — y si no, también. Sin compromiso.</p>
         <div class="assur"><span class="c">✓</span>Respuesta en menos de 24 horas</div>
-        <div class="assur"><span class="c">✓</span>Primera llamada gratuita, sin compromiso</div>
+        <div class="assur"><span class="c">✓</span>Análisis inicial sin compromiso</div>
         <div class="assur"><span class="c">✓</span>Atención directa en español</div>
       </div>
       <div class="reveal">
@@ -598,7 +647,7 @@ footer{background:var(--navy2);border-top:1px solid rgba(255,255,255,.06);paddin
 <footer>
   <div class="fi2">
     <div class="ft">
-      <div><div class="flg"><img src="nova%20blanco%201.png" alt="Novaterra"></div><p class="ftag">Residencia y residencia fiscal en Paraguay, gestionado en español de principio a fin.</p></div>
+      <div><div class="flg"><img src="nova%20blanco%201.png" alt="Novaterra — residencia fiscal en Paraguay" loading="lazy"></div><p class="ftag">Residencia y residencia fiscal en Paraguay, gestionado en español de principio a fin.</p></div>
       <div><div class="fct">Paraguay</div><ul class="fcl"><li><a href="#beneficios" data-home>Por qué Paraguay</a></li><li><a href="#proceso" data-home>Proceso</a></li><li><a href="#precios" data-home>Precio todo incluido</a></li><li><a href="#faq" data-home>FAQ</a></li></ul></div>
       <div><div class="fct">Empresas</div><ul class="fcl"><li><a href="#/cfo">CFO Externo</a></li><li><a href="#/cfo">Corporate Finance</a></li><li><a href="#precios" data-home>Sociedades en Paraguay</a></li><li><a href="#contacto" data-home>Contacto</a></li></ul></div>
       <div><div class="fct">Legal</div><ul class="fcl"><li><a href="#" onclick="oM('legal');return false">Aviso legal</a></li><li><a href="#" onclick="oM('privacy');return false">Privacidad</a></li><li><a href="#" onclick="oM('terms');return false">Terminos</a></li><li><a href="#" onclick="oM('disc');return false">Disclaimer</a></li></ul></div>
@@ -612,19 +661,23 @@ footer{background:var(--navy2);border-top:1px solid rgba(255,255,255,.06);paddin
 </footer>
 
 <!-- MODALES -->
-<div class="mo" id="modal-legal"><div class="mb"><button class="mc" onclick="cM('legal')">&#10005;</button><div class="mt">Aviso Legal</div><div class="ms">Novaterra &middot; 2026</div><div class="mb2"><h3>1. Titular</h3><p>El presente sitio web (novaterraholdings.com) es propiedad de Novaterra. Correo: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="325b5c545d725c5d445346574040535a5d5e565b5c55411c515d5f">[email&#160;protected]</a></p><h3>2. Objeto</h3><p>Sitio web de caracter informativo y comercial para presentar los servicios de Novaterra.</p><h3>3. Propiedad intelectual</h3><p>Todos los contenidos son propiedad de Novaterra. Queda prohibida su reproduccion sin autorizacion expresa.</p><h3>4. Responsabilidad</h3><p>Novaterra no garantiza la exactitud o actualidad de la informacion publicada. El uso del sitio es bajo responsabilidad del usuario.</p><h3>5. Ley aplicable</h3><p>Este aviso se rige por la legislacion de los Estados Unidos de America.</p></div></div></div>
+<div class="mo" id="modal-legal"><div class="mb"><button class="mc" onclick="cM('legal')">&#10005;</button><div class="mt">Aviso Legal</div><div class="ms">Novaterra &middot; 2026</div><div class="mb2"><h3>1. Titular</h3><p>El presente sitio web (novaterraholdings.com) es propiedad de Novaterra. Cualquier comunicación puede realizarse a través del formulario de contacto de este sitio.</p><h3>2. Objeto</h3><p>Sitio web de caracter informativo y comercial para presentar los servicios de Novaterra.</p><h3>3. Propiedad intelectual</h3><p>Todos los contenidos son propiedad de Novaterra. Queda prohibida su reproduccion sin autorizacion expresa.</p><h3>4. Responsabilidad</h3><p>Novaterra no garantiza la exactitud o actualidad de la informacion publicada. El uso del sitio es bajo responsabilidad del usuario.</p><h3>5. Ley aplicable</h3><p>Este aviso se rige por la legislacion de los Estados Unidos de America.</p></div></div></div>
 
-<div class="mo" id="modal-privacy"><div class="mb"><button class="mc" onclick="cM('privacy')">&#10005;</button><div class="mt">Politica de Privacidad</div><div class="ms">Novaterra &middot; 2026</div><div class="mb2"><h3>1. Responsable</h3><p>Novaterra, con correo <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="452c2b232a052b2a332431203737242d2a29212c2b22366b262a28">[email&#160;protected]</a>, es responsable del tratamiento de los datos personales recogidos a traves de este sitio.</p><h3>2. Datos que recopilamos</h3><p>Unicamente los que el usuario facilita voluntariamente: nombre, email, pais e informacion del mensaje. Este sitio no utiliza cookies de seguimiento ni publicidad.</p><h3>3. Finalidad</h3><p>Responder consultas y enviar informacion sobre servicios si el usuario da su consentimiento.</p><h3>4. Conservacion</h3><p>Los datos se conservaran un maximo de 2 a&#241;os desde el ultimo contacto, salvo relacion contractual en curso.</p><h3>5. Derechos</h3><p>El usuario puede ejercer sus derechos de acceso, rectificacion, supresion y oposicion enviando un correo a <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c5acaba3aa85abaab3a4b1a0b7b7a4adaaa9a1acaba2b6eba6aaa8">[email&#160;protected]</a>.</p><h3>6. Usuarios en California</h3><p>Los residentes en California tienen derechos bajo la CCPA. Para ejercerlos, contactar a <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9bf2f5fdf4dbf5f4edfaeffee9e9faf3f4f7fff2f5fce8b5f8f4f6">[email&#160;protected]</a>.</p></div></div></div>
+<div class="mo" id="modal-privacy"><div class="mb"><button class="mc" onclick="cM('privacy')">&#10005;</button><div class="mt">Politica de Privacidad</div><div class="ms">Novaterra &middot; 2026</div><div class="mb2"><h3>1. Responsable</h3><p>Novaterra es responsable del tratamiento de los datos personales recogidos a traves de este sitio.</p><h3>2. Datos que recopilamos</h3><p>Unicamente los que el usuario facilita voluntariamente: nombre, email, pais e informacion del mensaje. Este sitio no utiliza cookies de seguimiento ni publicidad.</p><h3>3. Finalidad</h3><p>Responder consultas y enviar informacion sobre servicios si el usuario da su consentimiento.</p><h3>4. Conservacion</h3><p>Los datos se conservaran un maximo de 2 a&#241;os desde el ultimo contacto, salvo relacion contractual en curso.</p><h3>5. Derechos</h3><p>El usuario puede ejercer sus derechos de acceso, rectificacion, supresion y oposicion a través del formulario de contacto de este sitio web; la gestión corre a cargo de Novaterra.</p><h3>6. Usuarios en California</h3><p>Los residentes en California tienen derechos bajo la CCPA. Para ejercerlos, utilizar el formulario de contacto de este sitio.</p></div></div></div>
 
 <div class="mo" id="modal-terms"><div class="mb"><button class="mc" onclick="cM('terms')">&#10005;</button><div class="mt">Terminos de Uso</div><div class="ms">Novaterra &middot; 2026</div><div class="mb2"><h3>1. Aceptacion</h3><p>El acceso y uso de este sitio implica la aceptacion de los presentes terminos.</p><h3>2. Servicios</h3><p>Novaterra presta servicios de consultoria financiera estrategica y de coordinacion en Paraguay. Todos los servicios son consultivos; no constituyen asesoramiento fiscal local ni gestion discrecional de carteras.</p><h3>3. Responsabilidad</h3><p>Novaterra no sera responsable de perdidas derivadas del uso de este sitio o inexactitudes en la informacion publicada.</p><h3>4. Ley aplicable</h3><p>Estos terminos se rigen por las leyes de los Estados Unidos de America.</p></div></div></div>
 
 <div class="mo" id="modal-disc"><div class="mb"><button class="mc" onclick="cM('disc')">&#10005;</button><div class="mt">Disclaimer Financiero</div><div class="ms">Novaterra &middot; Aviso importante &middot; 2026</div><div class="mb2"><div class="hl">Lea detenidamente este aviso antes de utilizar cualquier informacion de este sitio web.</div><h3>1. Solo informacion general</h3><p>Los contenidos se ofrecen con fines informativos. No constituyen asesoramiento financiero, de inversion, fiscal, contable ni legal.</p><h3>2. Sin asesoramiento de inversion</h3><p>Nada en este sitio debe interpretarse como recomendacion de compra, venta o mantenimiento de ningun valor o producto financiero.</p><h3>3. No registrada ante la SEC</h3><p>Novaterra no esta registrada como investment adviser ante la SEC ni ante ninguna autoridad reguladora de servicios de inversion. No ofrece servicios de gestion discrecional de carteras ni comercializacion de productos financieros regulados.</p><h3>4. Servicios en Paraguay</h3><p>Los servicios en Paraguay se prestan en coordinacion con despachos locales independientes. Novaterra actua como asesor y coordinador, sin responsabilidad por los servicios que dichos despachos presten directamente.</p><h3>5. Sin garantias de resultados</h3><p>Novaterra no garantiza ningun resultado economico, ahorro fiscal concreto ni resolucion favorable de ningun tramite.</p><h3>6. Limitacion de responsabilidad</h3><p>Novaterra no sera responsable de ninguna perdida directa o indirecta derivada del uso de este sitio. El uso de la informacion es bajo exclusiva responsabilidad del usuario.</p></div></div></div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function tF(b){const a=b.nextElementSibling,o=a.classList.contains('open');document.querySelectorAll('.fa.open').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.fq.open').forEach(x=>x.classList.remove('open'));if(!o){a.classList.add('open');b.classList.add('open')}}
 function oM(id){document.getElementById('modal-'+id).classList.add('open');document.body.style.overflow='hidden'}
 function cM(id){document.getElementById('modal-'+id).classList.remove('open');document.body.style.overflow=''}
 document.querySelectorAll('.mo').forEach(m=>m.addEventListener('click',e=>{if(e.target===m){m.classList.remove('open');document.body.style.overflow=''}}));
+
+/* mobile menu */
+function tNav(b){document.querySelector('.nav-links').classList.toggle('open');b.classList.toggle('open')}
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{document.querySelector('.nav-links').classList.remove('open');document.querySelector('.burger').classList.remove('open')}));
 
 /* ---- Router: Paraguay (default) / CFO (#/cfo) ---- */
 const vPy=document.getElementById('view-py'),vCfo=document.getElementById('view-cfo');
